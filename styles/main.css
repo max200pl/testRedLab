@@ -1,4 +1,4 @@
-/* color */
+@charset "UTF-8";
 
 /* Large Devices, Wide Screens */
 
@@ -11,6 +11,22 @@
 /* Extra Small Devices, Phones */
 
 /* Custom, iPhone Retina */
+
+/* color */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  /* свыше $screen-xxl: 1499px;*/
+  /* свыше $screen-lg: 992px;*/
+  /* свыше $screen-md: 767px;*/
+  /* от  480 до  767px*/
+  /* от  0 до  480px*/
+}
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -442,24 +458,18 @@ button {
   background-color: transparent;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
 .header__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 17px 0 16px 0;
 }
 
 .header__start {
+  /* от  0 до  767px*/
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -471,6 +481,7 @@ button {
 }
 
 .header__logo {
+  /* от  0 до  767px*/
   margin-left: 54px;
 }
 
@@ -490,7 +501,7 @@ button {
   width: 131px;
   height: 37px;
   border-radius: 48px;
-  background-color: #E2E8F0;
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -549,6 +560,8 @@ button {
 }
 
 .header__nav {
+  /* от  0 до  767px*/
+  /* от  767px до  1199px*/
   display: flex;
   align-content: center;
   justify-content: space-around;
@@ -570,6 +583,7 @@ button {
 }
 
 .header__info {
+  /* от  0 до  767px*/
   margin-right: 38px;
   font-family: Bold, sans-serif;
   font-size: 16px;
@@ -675,6 +689,32 @@ button {
 @media (min-width: 0) and (max-width: 480px) {
   .container {
     padding: 0 15px;
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px) {
+  .header__start {
+    flex-wrap: wrap;
+  }
+
+  .header__logo {
+    margin-left: 15px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header__info {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1199px) {
+  .header__nav {
+    flex: 0 0 100%;
+    order: 3;
+    margin: 15px auto;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
